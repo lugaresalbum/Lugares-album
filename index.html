@@ -9,8 +9,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
 </head>
-<body>
+<body class="is-distanced">
 
+    <!-- Botón de entrada flotante sobre el cielo -->
+    <div id="intro-trigger" class="intro-overlay">
+        <button class="enter-btn">TOCAR PARA LEER</button>
+    </div>
+
+    <!-- Hoja del Manifiesto -->
     <main class="paper-page">
         <header class="page-meta">
             <span class="album-title">LUGARES</span>
@@ -50,5 +56,13 @@
         </footer>
     </main>
 
+    <!-- Script de interacción Zoom -->
+    <script>
+        const trigger = document.getElementById('intro-trigger');
+        trigger.addEventListener('click', () => {
+            document.body.classList.remove('is-distanced');
+            document.body.classList.add('is-focused');
+        });
+    </script>
 </body>
 </html>
