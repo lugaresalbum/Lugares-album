@@ -8,6 +8,7 @@ body {
     background-image: url('fondo.jpg'); 
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
     background-repeat: no-repeat;
     color: #2b2927;
     font-family: 'Merriweather', Georgia, serif;
@@ -21,18 +22,18 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* Capa con Titulo y Botón */
+/* Pantalla de entrada 100% centrada */
 .intro-overlay {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 100;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgba(0, 0, 0, 0.05);
+    background: rgba(0, 0, 0, 0.15);
     cursor: pointer;
     transition: opacity 0.8s ease, visibility 0.8s ease;
 }
@@ -41,18 +42,20 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    justify-content: center;
+    gap: 25px;
     text-align: center;
+    padding: 20px;
 }
 
 .intro-brand {
     font-family: 'Inter', sans-serif;
     font-size: 13px;
     font-weight: 600;
-    letter-spacing: 0.25em;
+    letter-spacing: 0.3em;
     text-transform: uppercase;
-    color: #fcfbf7;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    color: #ffffff;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
 }
 
 .enter-btn {
@@ -64,43 +67,42 @@ body {
     font-weight: 600;
     letter-spacing: 0.25em;
     text-transform: uppercase;
-    padding: 16px 32px;
+    padding: 16px 36px;
     border-radius: 40px;
     cursor: pointer;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-    transition: all 0.4s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
 }
 
 .intro-overlay:hover .enter-btn {
     background: #2b2927;
     color: #fcfbf7;
     border-color: #2b2927;
-    transform: scale(1.05);
+    transform: scale(1.04);
 }
 
-/* Estado Inicial: Hoja lejana y desenfocada */
+/* Estado Inicial: Oculta la hoja totalmente hasta hacer clic */
 body.is-distanced .paper-page {
-    transform: scale(0.65) translateY(40px);
-    opacity: 0.4;
-    filter: blur(2px);
+    opacity: 0;
+    transform: scale(0.9) translateY(30px);
     pointer-events: none;
 }
 
-/* Transición de la Hoja */
+/* Hoja del Manifiesto */
 .paper-page {
-    background-color: rgba(252, 251, 247, 0.96);
+    background-color: rgba(252, 251, 247, 0.97);
     width: 100%;
     max-width: 820px;
     padding: 70px 80px;
     border-radius: 4px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12), 0 2px 5px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
     display: flex;
     flex-direction: column;
     gap: 60px;
-    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), opacity 1s ease, filter 1s ease;
+    transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease;
 }
 
-/* Estado Enfocado (post-clic) */
+/* Estado Enfocado (después de hacer clic) */
 body.is-focused .intro-overlay {
     opacity: 0;
     visibility: hidden;
@@ -108,9 +110,8 @@ body.is-focused .intro-overlay {
 }
 
 body.is-focused .paper-page {
-    transform: scale(1) translateY(0);
     opacity: 1;
-    filter: blur(0);
+    transform: scale(1) translateY(0);
 }
 
 .page-meta {
@@ -207,14 +208,8 @@ body.is-focused .paper-page {
         padding: 30px 15px;
     }
 
-    body.is-distanced .paper-page {
-        transform: scale(0.75) translateY(20px);
-    }
-
     .paper-page {
         padding: 40px 25px;
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-        border-radius: 4px;
         gap: 40px;
     }
 
