@@ -9,12 +9,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
 </head>
-<body class="is-closed">
+<body class="is-distanced">
 
-    <!-- Capa del Sobre / Carta interactiva -->
-    <div id="envelope-trigger" class="envelope-overlay">
-        <div class="envelope">
-            <div class="envelope-brand">LUGARES — MATEO FUERTES</div>
+    <!-- Capa de entrada con Título y Botón -->
+    <div id="intro-trigger" class="intro-overlay">
+        <div class="intro-box">
+            <span class="intro-brand">LUGARES — MATEO FUERTES</span>
             <button class="enter-btn">TOCAR PARA LEER</button>
         </div>
     </div>
@@ -59,12 +59,12 @@
         </footer>
     </main>
 
-    <!-- Script de apertura -->
+    <!-- Script de interacción Zoom -->
     <script>
-        const trigger = document.getElementById('envelope-trigger');
+        const trigger = document.getElementById('intro-trigger');
         trigger.addEventListener('click', () => {
-            document.body.classList.remove('is-closed');
-            document.body.classList.add('is-opened');
+            document.body.classList.remove('is-distanced');
+            document.body.classList.add('is-focused');
         });
     </script>
 </body>
