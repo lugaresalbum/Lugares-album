@@ -21,8 +21,8 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* Capa con botón "Tocar para leer" */
-.intro-overlay {
+/* Pantalla / Sobre de bienvenida */
+.envelope-overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -32,39 +32,64 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgba(0, 0, 0, 0.05);
+    background: rgba(0, 0, 0, 0.1);
     cursor: pointer;
-    transition: opacity 0.8s ease, visibility 0.8s ease;
+    transition: opacity 0.8s ease, visibility 0.8s ease, transform 0.8s ease;
 }
 
-.enter-btn {
+.envelope {
     background: #fcfbf7;
-    border: 1px solid #726e68;
-    color: #2b2927;
+    border: 1px solid #e2ded7;
+    padding: 50px 40px;
+    width: 90%;
+    max-width: 440px;
+    text-align: center;
+    border-radius: 4px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.envelope-brand {
     font-family: 'Inter', sans-serif;
     font-size: 11px;
     font-weight: 600;
     letter-spacing: 0.25em;
     text-transform: uppercase;
-    padding: 16px 32px;
-    border-radius: 40px;
-    cursor: pointer;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-    transition: all 0.4s ease;
+    color: #2b2927;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e2ded7;
+    width: 100%;
 }
 
-.enter-btn:hover {
+.enter-btn {
+    background: transparent;
+    border: 1px solid #726e68;
+    color: #2b2927;
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 14px 28px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.envelope:hover .enter-btn {
     background: #2b2927;
     color: #fcfbf7;
     border-color: #2b2927;
-    transform: scale(1.05);
 }
 
-/* Estado Inicial: Hoja lejana, achicada y desenfocada */
-body.is-distanced .paper-page {
-    transform: scale(0.65) translateY(40px);
-    opacity: 0.4;
-    filter: blur(2px);
+/* Estado Inicial: Hoja guardada y oculta tras el sobre */
+body.is-closed .paper-page {
+    transform: translateY(60px) scale(0.95);
+    opacity: 0;
     pointer-events: none;
 }
 
@@ -79,20 +104,23 @@ body.is-distanced .paper-page {
     display: flex;
     flex-direction: column;
     gap: 60px;
-    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), opacity 1s ease, filter 1s ease;
+    transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease;
 }
 
-/* Estado Enfocado (post-clic): El zoom se acerca suavemente */
-body.is-focused .intro-overlay {
+/* Estado Abierto (post-clic): El sobre sube y se desvanece, emerge el papel */
+body.is-opened .envelope-overlay {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
 }
 
-body.is-focused .paper-page {
-    transform: scale(1) translateY(0);
+body.is-opened .envelope {
+    transform: translateY(-40px) scale(0.95);
+}
+
+body.is-opened .paper-page {
+    transform: translateY(0) scale(1);
     opacity: 1;
-    filter: blur(0);
 }
 
 .page-meta {
@@ -189,8 +217,9 @@ body.is-focused .paper-page {
         padding: 30px 15px;
     }
 
-    body.is-distanced .paper-page {
-        transform: scale(0.75) translateY(20px);
+    .envelope {
+        padding: 40px 25px;
+        gap: 25px;
     }
 
     .paper-page {
