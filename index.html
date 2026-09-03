@@ -9,11 +9,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
 </head>
-<body class="is-distanced">
+<body class="is-closed">
 
-    <!-- Botón de entrada flotante sobre el cielo -->
-    <div id="intro-trigger" class="intro-overlay">
-        <button class="enter-btn">TOCAR PARA LEER</button>
+    <!-- Capa del Sobre / Carta interactiva -->
+    <div id="envelope-trigger" class="envelope-overlay">
+        <div class="envelope">
+            <div class="envelope-brand">LUGARES — MATEO FUERTES</div>
+            <button class="enter-btn">TOCAR PARA LEER</button>
+        </div>
     </div>
 
     <!-- Hoja del Manifiesto -->
@@ -56,12 +59,12 @@
         </footer>
     </main>
 
-    <!-- Script de interacción Zoom -->
+    <!-- Script de apertura -->
     <script>
-        const trigger = document.getElementById('intro-trigger');
+        const trigger = document.getElementById('envelope-trigger');
         trigger.addEventListener('click', () => {
-            document.body.classList.remove('is-distanced');
-            document.body.classList.add('is-focused');
+            document.body.classList.remove('is-closed');
+            document.body.classList.add('is-opened');
         });
     </script>
 </body>
