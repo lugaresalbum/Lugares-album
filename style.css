@@ -8,7 +8,6 @@ body {
     background-image: url('fondo.jpg'); 
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
     background-repeat: no-repeat;
     color: #2b2927;
     font-family: 'Merriweather', Georgia, serif;
@@ -47,8 +46,8 @@ body {
     border-bottom: 1px solid #e2ded7;
 }
 
-.artist-initials {
-    font-weight: 700;
+.artist-full {
+    font-weight: 600;
     color: #2b2927;
 }
 
@@ -103,7 +102,7 @@ body {
     text-transform: uppercase;
 }
 
-.artist-full {
+.listen-label {
     color: #2b2927;
 }
 
@@ -122,27 +121,27 @@ body {
     color: #000000;
 }
 
+/* Adaptación responsive para celulares */
 @media (max-width: 768px) {
     body {
-        padding: 0;
-        background-attachment: scroll;
+        padding: 30px 15px; /* Deja espacio a los lados para lucir la textura del fondo */
     }
 
     .paper-page {
         padding: 40px 25px;
-        box-shadow: none;
-        border-radius: 0;
-        gap: 45px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); /* Mantiene la sombra de la hoja flotante */
+        border-radius: 4px;
+        gap: 40px;
     }
 
     .manifesto-title-v2 {
-        font-size: 26px;
-        margin-bottom: 30px;
+        font-size: 24px;
+        margin-bottom: 25px;
     }
 
     .manifesto-content-v2 p {
-        font-size: 16px;
-        line-height: 1.7;
+        font-size: 15px;
+        line-height: 1.75;
         margin-bottom: 20px;
     }
 
