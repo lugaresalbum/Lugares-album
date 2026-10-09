@@ -99,9 +99,11 @@ body.is-distanced .paper-page {
     pointer-events: none;
 }
 
-/* Hoja del Manifiesto */
+/* Hoja del Manifiesto - Opacidad blanca reducida (0.82) */
 .paper-page {
-    background-color: rgba(252, 251, 247, 0.97);
+    background-color: rgba(252, 251, 247, 0.82);
+    backdrop-filter: blur(8px); /* Agrega un suave desenfoque al fondo */
+    -webkit-backdrop-filter: blur(8px);
     width: 100%;
     max-width: 820px;
     padding: 70px 80px;
@@ -141,6 +143,24 @@ body.is-focused .paper-page {
     border-bottom: 1px solid #e2ded7;
 }
 
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-item, .back-link {
+    color: #2b2927;
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-item:hover, .back-link:hover {
+    border-bottom: 1px solid #2b2927;
+}
+
 .artist-full {
     font-weight: 600;
     color: #2b2927;
@@ -150,6 +170,7 @@ body.is-focused .paper-page {
     max-width: 600px;
     margin: 0 auto;
     text-align: left;
+    width: 100%;
 }
 
 .manifesto-title-v2 {
@@ -176,6 +197,58 @@ body.is-focused .paper-page {
     font-size: 20px;
     color: #8c867e;
     margin: 45px 0;
+}
+
+/* Estilos para el Repositorio */
+.repo-item {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.repo-tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    color: #726e68;
+    text-transform: uppercase;
+}
+
+.audio-player-box {
+    background: rgba(255, 255, 255, 0.6);
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #e2ded7;
+}
+
+.custom-audio {
+    width: 100%;
+    outline: none;
+}
+
+.repo-caption {
+    font-family: 'Merriweather', Georgia, serif;
+    font-size: 15px !important;
+    font-style: italic;
+    color: #4a4642 !important;
+    margin-bottom: 0 !important;
+    line-height: 1.6 !important;
+}
+
+.repo-image-frame {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 4px;
+    border: 1px solid #e2ded7;
+}
+
+.repo-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
 }
 
 .page-footer-v2 {
