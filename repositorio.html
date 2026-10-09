@@ -22,7 +22,7 @@
             <p class="repo-instruction">Seleccioná una ficha para consultar el registro:</p>
         </section>
 
-        <!-- Grilla de Tarjetas Interactivas -->
+        <!-- Grilla de Tarjetas Definitivas -->
         <div class="archive-cards-grid">
 
             <!-- Tarjeta 1: Rinconcito de país -->
@@ -91,7 +91,7 @@
         </footer>
     </main>
 
-    <!-- VENTANAS MODALES -->
+    <!-- HOJAS DESPLEGABLES (MODALES) -->
 
     <!-- Modal Alfredo Laborde -->
     <div id="modal-laborde" class="modal-overlay" onclick="closeModalOnOuter(event, 'modal-laborde')">
@@ -100,7 +100,8 @@
             <span class="fragment-tag">[Rinconcito de país]</span>
             
             <div class="repo-image-frame">
-                <img src="./laborde.jpeg" alt="Dibujo de Alfredo Laborde" class="repo-img" onerror="this.src='./laborde.jpg'">
+                <!-- Ruta exacta apuntando a Laborde.jpeg de tu GitHub -->
+                <img src="./Laborde.jpeg" alt="Dibujo de Alfredo Laborde" class="repo-img">
             </div>
 
             <div class="modal-body-text">
@@ -138,8 +139,9 @@
         <div class="modal-paper">
             <button class="close-btn" onclick="closeModal('modal-cocina')">✕ CERRAR</button>
             <span class="fragment-tag">FOTOGRAFÍA</span>
-            <div class="repo-image-frame" style="margin-top: 25px;">
-                <img src="./cocina.jpg" alt="Fotografía de la cocina" class="repo-img" onerror="this.src='./cocina.jpeg'">
+            <div class="repo-image-frame">
+                <!-- Ruta exacta apuntando a cocina.jpg de tu GitHub -->
+                <img src="./cocina.jpg" alt="Fotografía de la cocina" class="repo-img">
             </div>
         </div>
     </div>
