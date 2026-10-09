@@ -18,51 +18,68 @@
         </header>
 
         <section class="repo-head-clean">
-            <h1 class="manifesto-title-v2">Índice de Registros</h1>
+            <h1 class="manifesto-title-v2">Archivo y Registros</h1>
+            <p class="repo-instruction">Seleccioná una ficha para consultar el registro:</p>
         </section>
 
-        <!-- Índice Analógico Tipográfico -->
-        <div class="analog-index">
+        <!-- Grilla de Tarjetas Interactivas -->
+        <div class="archive-cards-grid">
 
-            <!-- Elemento 1: Rinconcito de país -->
-            <div class="index-entry" onclick="openModal('modal-laborde')">
-                <span class="entry-num">01</span>
-                <div class="entry-content">
-                    <span class="entry-category">TEXTO & MEMORIA</span>
-                    <h2 class="entry-title">Rinconcito de país</h2>
+            <!-- Tarjeta 1: Rinconcito de país -->
+            <article class="archive-card" onclick="openModal('modal-laborde')">
+                <div class="card-head">
+                    <span class="card-tag">TEXTO & MEMORIA</span>
+                    <span class="card-num">01</span>
                 </div>
-                <span class="entry-arrow">↵</span>
-            </div>
+                <h2 class="card-title">Rinconcito de país</h2>
+                <p class="card-excerpt">Alfredo Laborde era mi bisabuelo y es -porque el arte vuelve eterna toda autoría- el autor de este dibujo...</p>
+                <div class="card-footer-action">
+                    <span>LEER REGISTRO</span>
+                    <span class="action-icon">↗</span>
+                </div>
+            </article>
 
-            <!-- Elemento 2: Audio -->
-            <div class="index-entry" onclick="openModal('modal-audio')">
-                <span class="entry-num">02</span>
-                <div class="entry-content">
-                    <span class="entry-category">ARCHIVO SONORO</span>
-                    <h2 class="entry-title">Quisiera despertar</h2>
+            <!-- Tarjeta 2: Audio -->
+            <article class="archive-card" onclick="openModal('modal-audio')">
+                <div class="card-head">
+                    <span class="card-tag">ARCHIVO SONORO</span>
+                    <span class="card-num">02</span>
                 </div>
-                <span class="entry-arrow">↵</span>
-            </div>
+                <h2 class="card-title">Quisiera despertar</h2>
+                <p class="card-excerpt">Nico y Tobi cantando en San Javier (noviembre 2025).</p>
+                <div class="card-footer-action">
+                    <span>ESCUCHAR AUDIO</span>
+                    <span class="action-icon">♪</span>
+                </div>
+            </article>
 
-            <!-- Elemento 3: Foto Cocina -->
-            <div class="index-entry" onclick="openModal('modal-cocina')">
-                <span class="entry-num">03</span>
-                <div class="entry-content">
-                    <span class="entry-category">FOTOGRAFÍA</span>
-                    <h2 class="entry-title">La cocina</h2>
+            <!-- Tarjeta 3: Foto Cocina -->
+            <article class="archive-card" onclick="openModal('modal-cocina')">
+                <div class="card-head">
+                    <span class="card-tag">FOTOGRAFÍA</span>
+                    <span class="card-num">03</span>
                 </div>
-                <span class="entry-arrow">↵</span>
-            </div>
+                <h2 class="card-title">La cocina</h2>
+                <p class="card-excerpt">Registro fotográfico del espacio.</p>
+                <div class="card-footer-action">
+                    <span>VER FOTO</span>
+                    <span class="action-icon">↗</span>
+                </div>
+            </article>
 
-            <!-- Elemento 4: Cartografía de Coordenadas -->
-            <div class="index-entry" onclick="openModal('modal-coords')">
-                <span class="entry-num">04</span>
-                <div class="entry-content">
-                    <span class="entry-category">GEOGRAFÍA</span>
-                    <h2 class="entry-title">Cartografía — 9 Coordenadas</h2>
+            <!-- Tarjeta 4: Cartografía -->
+            <article class="archive-card" onclick="openModal('modal-coords')">
+                <div class="card-head">
+                    <span class="card-tag">CARTOGRAFÍA</span>
+                    <span class="card-num">04</span>
                 </div>
-                <span class="entry-arrow">↵</span>
-            </div>
+                <h2 class="card-title">Puntos de anclaje</h2>
+                <p class="card-excerpt">Nueve coordenadas geográficas inscritas en el territorio.</p>
+                <div class="card-footer-action">
+                    <span>VER COORDENADAS</span>
+                    <span class="action-icon">↗</span>
+                </div>
+            </article>
 
         </div>
 
@@ -74,16 +91,16 @@
         </footer>
     </main>
 
-    <!-- HOJAS DESPLEGABLES (MODALES) -->
+    <!-- VENTANAS MODALES -->
 
-    <!-- 1. Modal Rinconcito de País -->
+    <!-- Modal Alfredo Laborde -->
     <div id="modal-laborde" class="modal-overlay" onclick="closeModalOnOuter(event, 'modal-laborde')">
         <div class="modal-paper">
             <button class="close-btn" onclick="closeModal('modal-laborde')">✕ CERRAR</button>
             <span class="fragment-tag">[Rinconcito de país]</span>
             
             <div class="repo-image-frame">
-                <img src="./laborde.jpeg" alt="Dibujo de Alfredo Laborde" class="repo-img">
+                <img src="./laborde.jpeg" alt="Dibujo de Alfredo Laborde" class="repo-img" onerror="this.src='./laborde.jpg'">
             </div>
 
             <div class="modal-body-text">
@@ -96,7 +113,7 @@
         </div>
     </div>
 
-    <!-- 2. Modal Audio -->
+    <!-- Modal Audio -->
     <div id="modal-audio" class="modal-overlay" onclick="closeModalOnOuter(event, 'modal-audio')">
         <div class="modal-paper">
             <button class="close-btn" onclick="closeModal('modal-audio')">✕ CERRAR</button>
@@ -116,18 +133,18 @@
         </div>
     </div>
 
-    <!-- 3. Modal Fotografía Cocina -->
+    <!-- Modal Foto Cocina -->
     <div id="modal-cocina" class="modal-overlay" onclick="closeModalOnOuter(event, 'modal-cocina')">
         <div class="modal-paper">
             <button class="close-btn" onclick="closeModal('modal-cocina')">✕ CERRAR</button>
             <span class="fragment-tag">FOTOGRAFÍA</span>
             <div class="repo-image-frame" style="margin-top: 25px;">
-                <img src="./cocina.jpg" alt="Fotografía de la cocina" class="repo-img">
+                <img src="./cocina.jpg" alt="Fotografía de la cocina" class="repo-img" onerror="this.src='./cocina.jpeg'">
             </div>
         </div>
     </div>
 
-    <!-- 4. Modal Cartografía (Unificación de las 9 Coordenadas) -->
+    <!-- Modal Cartografía -->
     <div id="modal-coords" class="modal-overlay" onclick="closeModalOnOuter(event, 'modal-coords')">
         <div class="modal-paper">
             <button class="close-btn" onclick="closeModal('modal-coords')">✕ CERRAR</button>
