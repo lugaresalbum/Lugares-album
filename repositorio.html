@@ -11,88 +11,58 @@
 </head>
 <body class="is-focused">
 
-    <main class="paper-page repository-paper">
+    <main class="paper-page">
         <header class="page-meta">
             <a href="./index.html" class="back-link">← MANIFIESTO</a>
             <span class="repo-header-title">ARCHIVO & REPOSITORIO</span>
         </header>
 
-        <section class="repo-intro">
-            <h1 class="manifesto-title-v2">Archivos dispersos</h1>
-            <p class="repo-subtitle">Hacé clic sobre cualquier fragmento o ficha para desplegar su contenido.</p>
+        <section class="repo-head-clean">
+            <h1 class="manifesto-title-v2">Índice de Registros</h1>
         </section>
 
-        <!-- Cuadrícula / Colección de Hojas y Fichas -->
-        <div class="archive-grid">
-            
-            <!-- Ficha 1: Texto Alfredo Laborde -->
-            <article class="paper-fragment text-fragment" onclick="openModal('modal-laborde')">
-                <span class="fragment-tag">TEXTO / MEMORIA</span>
-                <h3 class="fragment-title">Rinconcito de país</h3>
-                <p class="fragment-preview">Alfredo Laborde era mi bisabuelo y es -porque el arte vuelve eterna toda autoría- el autor de este dibujo...</p>
-                <span class="fragment-action">DESPLEGAR HOJA ↗</span>
-            </article>
+        <!-- Índice Analógico Tipográfico -->
+        <div class="analog-index">
 
-            <!-- Ficha 2: Audio -->
-            <article class="paper-fragment audio-fragment" onclick="openModal('modal-audio')">
-                <span class="fragment-tag">ARCHIVO SONORO</span>
-                <h3 class="fragment-title">Quisiera despertar</h3>
-                <p class="fragment-preview">Nico y Tobi cantando en San Javier (2025)</p>
-                <span class="fragment-action">ESCUCHAR ↗</span>
-            </article>
+            <!-- Elemento 1: Rinconcito de país -->
+            <div class="index-entry" onclick="openModal('modal-laborde')">
+                <span class="entry-num">01</span>
+                <div class="entry-content">
+                    <span class="entry-category">TEXTO & MEMORIA</span>
+                    <h2 class="entry-title">Rinconcito de país</h2>
+                </div>
+                <span class="entry-arrow">↵</span>
+            </div>
 
-            <!-- Ficha 3: Fotografía Cocina -->
-            <article class="paper-fragment photo-fragment" onclick="openModal('modal-cocina')">
-                <span class="fragment-tag">FOTOGRAFÍA</span>
-                <h3 class="fragment-title">La Cocina</h3>
-                <span class="fragment-action">VER FOTO ↗</span>
-            </article>
+            <!-- Elemento 2: Audio -->
+            <div class="index-entry" onclick="openModal('modal-audio')">
+                <span class="entry-num">02</span>
+                <div class="entry-content">
+                    <span class="entry-category">ARCHIVO SONORO</span>
+                    <h2 class="entry-title">Quisiera despertar</h2>
+                </div>
+                <span class="entry-arrow">↵</span>
+            </div>
 
-            <!-- Coordenadas Geográficas (Hojas Arrancadas) -->
-            <article class="paper-fragment coord-fragment" onclick="openModal('coord-1')">
-                <span class="fragment-tag">COORDENADA I</span>
-                <code class="coord-code">32°01'35.7"S 65°01'48.7"W</code>
-            </article>
+            <!-- Elemento 3: Foto Cocina -->
+            <div class="index-entry" onclick="openModal('modal-cocina')">
+                <span class="entry-num">03</span>
+                <div class="entry-content">
+                    <span class="entry-category">FOTOGRAFÍA</span>
+                    <h2 class="entry-title">La cocina</h2>
+                </div>
+                <span class="entry-arrow">↵</span>
+            </div>
 
-            <article class="paper-fragment coord-fragment" onclick="openModal('coord-2')">
-                <span class="fragment-tag">COORDENADA II</span>
-                <code class="coord-code">32°54'51.3"S 60°40'28.0"W</code>
-            </article>
-
-            <article class="paper-fragment coord-fragment" onclick="openModal('coord-3')">
-                <span class="fragment-tag">COORDENADA III</span>
-                <code class="coord-code">32°51'31.3"S 60°40'53.1"W</code>
-            </article>
-
-            <article class="paper-fragment coord-fragment" onclick="openModal('coord-4')">
-                <span class="fragment-tag">COORDENADA IV</span>
-                <code class="coord-code">32°57'23.8"S 60°39'35.5"W</code>
-            </article>
-
-            <article class="paper-fragment coord-fragment" onclick="openModal('coord-5')">
-                <span class="fragment-tag">COORDENADA V</span>
-                <code class="coord-code">32°56'01.5"S 60°40'05.9"W</code>
-            </article>
-
-            <article class="paper-fragment coord-fragment" onclick="openModal('coord-6')">
-                <span class="fragment-tag">COORDENADA VI</span>
-                <code class="coord-code">32°56'02.7"S 60°39'37.6"W</code>
-            </article>
-
-            <article class="paper-fragment coord-fragment" onclick="openModal('coord-7')">
-                <span class="fragment-tag">COORDENADA VII</span>
-                <code class="coord-code">32°55'42.1"S 60°41'21.5"W</code>
-            </article>
-
-            <article class="paper-fragment coord-fragment" onclick="openModal('coord-8')">
-                <span class="fragment-tag">COORDENADA VIII</span>
-                <code class="coord-code">32°55'27.3"S 60°44'18.5"W</code>
-            </article>
-
-            <article class="paper-fragment coord-fragment" onclick="openModal('coord-9')">
-                <span class="fragment-tag">COORDENADA IX</span>
-                <code class="coord-code">43°32'32.2"N 6°32'08.6"W</code>
-            </article>
+            <!-- Elemento 4: Cartografía de Coordenadas -->
+            <div class="index-entry" onclick="openModal('modal-coords')">
+                <span class="entry-num">04</span>
+                <div class="entry-content">
+                    <span class="entry-category">GEOGRAFÍA</span>
+                    <h2 class="entry-title">Cartografía — 9 Coordenadas</h2>
+                </div>
+                <span class="entry-arrow">↵</span>
+            </div>
 
         </div>
 
@@ -104,16 +74,18 @@
         </footer>
     </main>
 
-    <!-- VENTANAS MODALES (VISORES DE CONTENIDO) -->
+    <!-- HOJAS DESPLEGABLES (MODALES) -->
 
-    <!-- Modal Alfredo Laborde -->
+    <!-- 1. Modal Rinconcito de País -->
     <div id="modal-laborde" class="modal-overlay" onclick="closeModalOnOuter(event, 'modal-laborde')">
         <div class="modal-paper">
             <button class="close-btn" onclick="closeModal('modal-laborde')">✕ CERRAR</button>
             <span class="fragment-tag">[Rinconcito de país]</span>
-            <div class="repo-image-frame" style="margin: 20px 0;">
-                <img src="./alfredo-laborde.jpg" alt="Dibujo Alfredo Laborde" class="repo-img" onerror="this.style.display='none'">
+            
+            <div class="repo-image-frame">
+                <img src="./laborde.jpeg" alt="Dibujo de Alfredo Laborde" class="repo-img">
             </div>
+
             <div class="modal-body-text">
                 <p>Alfredo Laborde era mi bisabuelo y es -porque el arte vuelve eterna toda autoría- el autor de este dibujo. En algún momento de su vida, que para mí siempre fue un completo misterio, los caminos lo llevaron a Traslasierra, en Córdoba, y llegó a un poblado perdido en medio del camino al Champaquí: San Javier. Aquel Caserío, en 1920, no tenía más que una iglesia, una plaza, algunos ranchos y poco más.</p>
                 <p>Sin dudas, algo de aquel paisaje serrano lo cautivó, porque plasmó a San Javier en más de una obra.</p>
@@ -124,45 +96,63 @@
         </div>
     </div>
 
-    <!-- Modal Audio -->
+    <!-- 2. Modal Audio -->
     <div id="modal-audio" class="modal-overlay" onclick="closeModalOnOuter(event, 'modal-audio')">
         <div class="modal-paper">
             <button class="close-btn" onclick="closeModal('modal-audio')">✕ CERRAR</button>
             <span class="fragment-tag">ARCHIVO SONORO</span>
             <h2 class="modal-title">Quisiera despertar</h2>
-            <div class="audio-player-box" style="margin: 25px 0;">
+            
+            <div class="audio-player-box">
                 <audio controls class="custom-audio">
                     <source src="./nico-tobi-queriendo-despertar.mp3" type="audio/mpeg">
-                    Tu navegador no soporta reproducción de audio.
+                    Tu navegador no soporta la reproducción de audio.
                 </audio>
             </div>
+            
             <p class="repo-caption">
                 Nico y Tobi cantando “Quisiera despertar” de El Príncipe. San Javier, noviembre 2025.
             </p>
         </div>
     </div>
 
-    <!-- Modal Foto Cocina -->
+    <!-- 3. Modal Fotografía Cocina -->
     <div id="modal-cocina" class="modal-overlay" onclick="closeModalOnOuter(event, 'modal-cocina')">
         <div class="modal-paper">
             <button class="close-btn" onclick="closeModal('modal-cocina')">✕ CERRAR</button>
             <span class="fragment-tag">FOTOGRAFÍA</span>
-            <div class="repo-image-frame" style="margin-top: 20px;">
-                <img src="./cocina.jpg" alt="La cocina" class="repo-img">
+            <div class="repo-image-frame" style="margin-top: 25px;">
+                <img src="./cocina.jpg" alt="Fotografía de la cocina" class="repo-img">
             </div>
         </div>
     </div>
 
-    <!-- Modales Generales de Coordenadas -->
+    <!-- 4. Modal Cartografía (Unificación de las 9 Coordenadas) -->
+    <div id="modal-coords" class="modal-overlay" onclick="closeModalOnOuter(event, 'modal-coords')">
+        <div class="modal-paper">
+            <button class="close-btn" onclick="closeModal('modal-coords')">✕ CERRAR</button>
+            <span class="fragment-tag">CARTOGRAFÍA</span>
+            <h2 class="modal-title">Puntos de anclaje</h2>
+            <p class="coords-intro">Nueve coordenadas geográficas inscritas en el territorio:</p>
+            
+            <ul class="coords-list">
+                <li><code>32°01'35.7"S 65°01'48.7"W</code></li>
+                <li><code>32°54'51.3"S 60°40'28.0"W</code></li>
+                <li><code>32°51'31.3"S 60°40'53.1"W</code></li>
+                <li><code>32°57'23.8"S 60°39'35.5"W</code></li>
+                <li><code>32°56'01.5"S 60°40'05.9"W</code></li>
+                <li><code>32°56'02.7"S 60°39'37.6"W</code></li>
+                <li><code>32°55'42.1"S 60°41'21.5"W</code></li>
+                <li><code>32°55'27.3"S 60°44'18.5"W</code></li>
+                <li><code>43°32'32.2"N 6°32'08.6"W</code></li>
+            </ul>
+        </div>
+    </div>
+
     <script>
         function openModal(id) {
             const modal = document.getElementById(id);
-            if (modal) {
-                modal.classList.add('active');
-            } else {
-                // Generación dinámica para las coordenadas si no existe el modal en HTML
-                alert("Fragmento geográfico: " + id);
-            }
+            if (modal) modal.classList.add('active');
         }
 
         function closeModal(id) {
