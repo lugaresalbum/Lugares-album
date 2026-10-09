@@ -7,7 +7,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./style.css">
+    
+    <!-- El ?v=2.0 obliga al navegador a leer los estilos nuevos del cuadrilátero -->
+    <link rel="stylesheet" href="./style.css?v=2.0">
 </head>
 <body class="is-focused">
 
@@ -100,7 +102,6 @@
             <span class="fragment-tag">[Rinconcito de país]</span>
             
             <div class="repo-image-frame">
-                <!-- Ruta exacta apuntando a Laborde.jpeg de tu GitHub -->
                 <img src="./Laborde.jpeg" alt="Dibujo de Alfredo Laborde" class="repo-img">
             </div>
 
@@ -140,8 +141,8 @@
             <button class="close-btn" onclick="closeModal('modal-cocina')">✕ CERRAR</button>
             <span class="fragment-tag">FOTOGRAFÍA</span>
             <div class="repo-image-frame">
-                <!-- Ruta exacta apuntando a cocina.jpg de tu GitHub -->
-                <img src="./cocina.jpg" alt="Fotografía de la cocina" class="repo-img">
+                <!-- Apunta a cocina.jpg con seguro por si está en mayúscula/jpeg -->
+                <img src="./cocina.jpg" alt="Fotografía de la cocina" class="repo-img" onerror="this.onerror=null; this.src='./cocina.jpeg';">
             </div>
         </div>
     </div>
