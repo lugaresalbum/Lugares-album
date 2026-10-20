@@ -21,7 +21,7 @@ body::before {
 body {
     background-color: #1a1918;
     color: #2b2927;
-    font-family: 'Merriweather', Georgia, serif;
+    font-family: 'Archivo', Georgia, serif;
     min-height: 100vh;
     display: flex;
     justify-content: center;
