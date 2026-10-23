@@ -21,7 +21,7 @@ body::before {
 body {
     background-color: #1a1918;
     color: #2b2927;
-    font-family: 'Archivo', Georgia, serif;
+    font-family: 'Archivo', sans-serif;
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -198,22 +198,35 @@ body.is-focused .paper-page {
     width: 100%;
 }
 
+/* Imagen del Título del Manifiesto */
+.manifesto-header-img-box {
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.manifesto-header-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    mix-blend-mode: multiply; /* Fusiona el fondo blanco con el papel */
+}
+
 .manifesto-title-v2 {
-    font-family: 'Merriweather', Georgia, serif;
+    font-family: 'Archivo', sans-serif;
     font-size: 32px;
     font-weight: 700;
-    line-height: 1.3;
+    line-height: 1.25;
     color: #1a1918;
-    margin-bottom: 35px;
+    margin-bottom: 30px;
 }
 
 .manifesto-content-v2 p {
-    font-family: 'Merriweather', Georgia, serif;
-    font-size: 17px;
-    line-height: 1.85;
+    font-family: 'Archivo', sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
     font-weight: 300;
     color: #2b2927;
-    margin-bottom: 26px !important; /* Espaciado clave entre párrafos */
+    margin-bottom: 26px !important;
 }
 
 .modern-separator {
@@ -281,7 +294,7 @@ body.is-focused .paper-page {
 }
 
 .card-title {
-    font-family: 'Merriweather', Georgia, serif;
+    font-family: 'Archivo', sans-serif;
     font-size: 18px;
     font-weight: 700;
     color: #1a1918;
@@ -289,6 +302,7 @@ body.is-focused .paper-page {
 }
 
 .card-excerpt {
+    font-family: 'Archivo', sans-serif;
     font-size: 13px;
     line-height: 1.5;
     color: #555048;
@@ -373,7 +387,7 @@ body.is-focused .paper-page {
 }
 
 .modal-title {
-    font-family: 'Merriweather', Georgia, serif;
+    font-family: 'Archivo', sans-serif;
     font-size: 24px;
     font-weight: 700;
     margin: 15px 0 20px 0;
@@ -381,8 +395,9 @@ body.is-focused .paper-page {
 }
 
 .modal-body-text p {
+    font-family: 'Archivo', sans-serif;
     font-size: 15px;
-    line-height: 1.85;
+    line-height: 1.8;
     color: #2b2927;
     margin-bottom: 20px;
     font-weight: 300;
@@ -415,7 +430,7 @@ body.is-focused .paper-page {
 }
 
 .repo-caption {
-    font-family: 'Merriweather', Georgia, serif;
+    font-family: 'Archivo', sans-serif;
     font-size: 14px;
     font-style: italic;
     color: #666058;
@@ -498,11 +513,6 @@ body.is-focused .paper-page {
 
     .archive-cards-grid {
         grid-template-columns: 1fr !important;
-    }
-
-    .manifesto-title-v2 {
-        font-size: 24px;
-        margin-bottom: 25px;
     }
 
     .manifesto-content-v2 p {
