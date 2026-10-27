@@ -54,19 +54,7 @@
                 </div>
             </article>
 
-            <!-- Tarjeta 3: Foto Cocina -->
-            <article class="archive-card" onclick="openModal('modal-cocina')">
-                <div class="card-head">
-                    <span class="card-tag">FOTOGRAFÍA</span>
-                    <span class="card-num">03</span>
-                </div>
-                <h2 class="card-title">La cocina</h2>
-                <p class="card-excerpt">Registro fotográfico del espacio.</p>
-                <div class="card-footer-action">
-                    <span>VER FOTO</span>
-                    <span class="action-icon">↗</span>
-                </div>
-            </article>
+          
 
             <!-- Tarjeta 4: Cartografía -->
             <article class="archive-card" onclick="openModal('modal-coords')">
@@ -134,16 +122,6 @@
         </div>
     </div>
 
-    <!-- Modal Foto Cocina -->
-    <div id="modal-cocina" class="modal-overlay" onclick="closeModalOnOuter(event, 'modal-cocina')">
-        <div class="modal-paper">
-            <button class="close-btn" onclick="closeModal('modal-cocina')">✕ CERRAR</button>
-            <span class="fragment-tag">FOTOGRAFÍA</span>
-            <div class="repo-image-frame">
-                <img src="./cocina.jpg" alt="Fotografía de la cocina" class="repo-img" onerror="this.onerror=null; this.src='./cocina.jpeg';">
-            </div>
-        </div>
-    </div>
 
     <!-- Modal Cartografía -->
     <div id="modal-coords" class="modal-overlay" onclick="closeModalOnOuter(event, 'modal-coords')">
