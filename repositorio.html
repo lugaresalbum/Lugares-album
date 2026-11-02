@@ -54,7 +54,19 @@
                 </div>
             </article>
 
-          
+           <!-- Tarjeta 3: Rosario -->
+            <article class="archive-card" onclick="openModal('modal-rosario')">
+                <div class="card-head">
+                    <span class="card-tag">TEXTO & MEMORIA</span>
+                    <span class="card-num">03</span>
+                </div>
+                <h2 class="card-title">Rosario</h2>
+                <p class="card-excerpt"></p>
+                <div class="card-footer-action">
+                    <span>LEER REGISTRO</span>
+                    <span class="action-icon">↗</span>
+                </div>
+            </article>
 
             <!-- Tarjeta 4: Cartografía -->
             <article class="archive-card" onclick="openModal('modal-coords')">
@@ -122,6 +134,22 @@
         </div>
     </div>
 
+    <!-- Rosario -->
+    <div id="modal-rosario" class="modal-overlay" onclick="closeModalOnOuter(event, 'modal-rosario')">
+        <div class="modal-paper">
+            <button class="close-btn" onclick="closeModal('modal-rosario')">✕ CERRAR</button>
+            <span class="fragment-tag">[Rosario]</span>
+            
+            <div class="repo-image-frame">
+                <img src="./Rosario.jpeg" alt="Rosario" class="repo-img blend-img">
+            </div>
+
+            <div class="modal-body-text">
+                <p>Nacido y criado en la ciudad de Rosario, no puedo sino desarrollar mis canciones al compás del entorno. El río Paraná, ineludible; las calles, arterias de una vida; la música, los bares, los amigos, la cancha. Todo eso que es Rosario, y que también soy yo, se trasluce entre los versos.</p>
+                <p>Pero hay algo más allá... Si vas para aquel lado están las sierras; si vas para el otro, el mar. ¿Qué somos, sino todo aquello? ¿Qué somos, sino los lugares? </p>
+            </div>
+        </div>
+    </div>
 
     <!-- Modal Cartografía -->
     <div id="modal-coords" class="modal-overlay" onclick="closeModalOnOuter(event, 'modal-coords')">
