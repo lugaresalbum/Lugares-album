@@ -82,6 +82,20 @@
                 </div>
             </article>
 
+            <!-- Tarjeta 5: Liquidambar -->
+            <article class="archive-card" onclick="openModal('modal-liquidambar')">
+                <div class="card-head">
+                    <span class="card-tag">BOTÁNICA</span>
+                    <span class="card-num">01</span>
+                </div>
+                <h2 class="card-title">Liquidámbar</h2>
+                <p class="card-excerpt">
+                <div class="card-footer-action">
+                    <span>VER IMAGEN</span>
+                    <span class="action-icon">↗</span>
+                </div>
+            </article>
+
         </div>
 
         <footer class="page-footer-v2">
@@ -175,6 +189,23 @@
         </div>
     </div>
 
+      <!-- Liquidámbar -->
+    <div id="modal-liquidámber" class="modal-overlay" onclick="closeModalOnOuter(event, 'modal-liquidámbar')">
+        <div class="modal-paper">
+            <button class="close-btn" onclick="closeModal('modal-liquidámbar')">✕ CERRAR</button>
+            <span class="fragment-tag">[Rosario]</span>
+            
+            <div class="repo-image-frame">
+                <img src="./Liquidambar.jpg" alt="Liquidambar" class="repo-img blend-img">
+            </div>
+
+            <div class="modal-body-text">
+                <p> Fruto del liquidámbar (Liquidambar styraciflua) extraído del jardínd de casa.</p>
+                <p>
+                
+            </div>
+        </div>
+    </div>
     <script>
         function openModal(id) {
             const modal = document.getElementById(id);
