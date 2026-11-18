@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDICIÓN FÍSICA — LUGARES</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css?v=8.0">
+</head>
+<body class="is-focused">
+
+    <main class="paper-page">
+        <header class="page-meta">
+            <a href="./index.html" class="back-link">← MANIFIESTO</a>
+            <div class="nav-badges">
+                <a href="./repositorio.html" class="repo-badge-link">[ REPOSITORIO ]</a>
+            </div>
+        </header>
+
+        <article class="manifesto-content-v2 physical-edition-section">
+            <h1 class="manifesto-title-v2">Edición Física</h1>
+
+            <!-- Carrusel de Imágenes del Objeto -->
+            <div class="carousel-container">
+                <div class="carousel-track" id="carouselTrack">
+                    <div class="carousel-slide active">
+                        <img src="./fisico-1.jpg" alt="Objeto físico Lugares 1" onerror="this.src='./cocina.jpg'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="./fisico-2.jpg" alt="Objeto físico Lugares 2" onerror="this.src='./Laborde.jpeg'">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="./fisico-3.jpg" alt="Objeto físico Lugares 3" onerror="this.src='./cocina.jpg'">
+                    </div>
+                </div>
+                <button class="carousel-btn prev-btn" onclick="moveSlide(-1)">❮</button>
+                <button class="carousel-btn next-btn" onclick="moveSlide(1)">❯</button>
+                <div class="carousel-dots">
+                    <span class="dot active" onclick="currentSlide(0)"></span>
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                </div>
+            </div>
+
+            <!-- Texto descriptivo oficial -->
+            <div class="physical-description">
+                <p>El "Album", creado por Maxi Rossini y Dani Bouix, es la edición física de Lugares. Concebido como un objeto desplegable, reúne ocho elementos gráficos que dialogan con cada una de las canciones del disco.</p>
+                <p>Pensado como una parte constitutiva de la obra, el dispositivo completa el sentido y el universo conceptual de Lugares.</p>
+            </div>
+
+            <div class="modern-separator">•</div>
+
+            <!-- Sección de Adquisición / Transferencia y Formulario -->
+            <div class="store-acquisition-block">
+                <h3 class="store-heading">Adquirir Ejemplar</h3>
+                
+                <div class="store-instructions-box">
+                    <p class="store-step"><strong>Paso 1:</strong> Realizá una transferencia por el valor del ejemplar al alias oficial:</p>
+                    <div class="alias-highlight" onclick="copiarAlias()">
+                        <code>lugares.album</code>
+                        <span class="copy-hint" id="copy-feedback">Copiar alias</span>
+                    </div>
+                    <p class="store-step" style="margin-top: 15px;"><strong>Paso 2:</strong> Completá el formulario con tus datos para coordinar el envío o retiro.</p>
+                </div>
+
+                <!-- Formulario Autónomo Formspree -->
+                <!-- Recordá cambiar TU_FORM_ID por tu código de formspree.io -->
+                <form action="https://formspree.io/f/TU_FORM_ID" method="POST" class="store-form">
+                    <div class="form-group">
+                        <label for="nombre">Nombre y Apellido</label>
+                        <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre completo">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Correo electrónico</label>
+                        <input type="email" id="email" name="email" required placeholder="tu@correo.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="entrega">Modalidad de entrega</label>
+                        <select id="entrega" name="entrega" required>
+                            <option value="Retiro en Rosario">Retiro en Rosario (Sin cargo)</option>
+                            <option value="Envio postal a domicilio">Envío postal a domicilio</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="direccion">Dirección completa y Código Postal (si elegiste envío)</label>
+                        <textarea id="direccion" name="direccion" rows="2" placeholder="Calle, número, piso, ciudad, CP..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="comprobante">Número de Operación / Comprobante de Transferencia</label>
+                        <input type="text" id="comprobante" name="comprobante" required placeholder="Nº de transferencia o ID de pago">
+                    </div>
+
+                    <button type="submit" class="submit-order-btn">CONFIRMAR PEDIDO DE COMPRA</button>
+                </form>
+            </div>
+        </article>
+
+        <footer class="page-footer-v2">
+            <div class="footer-core">
+                <span class="listen-label">LUGARES — MATEO FUERTES</span>
+                <a href="./index.html" class="listen-link">VOLVER AL MANIFIESTO</a>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Script para el Carrusel e Interacciones -->
+    <script>
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.carousel-slide');
+        const dots = document.querySelectorAll('.dot');
+
+        function showSlide(n) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            slideIndex = (n + slides.length) % slides.length;
+            slides[slideIndex].classList.add('active');
+            dots[slideIndex].classList.add('active');
+        }
+
+        function moveSlide(n) {
+            showSlide(slideIndex + n);
+        }
+
+        function currentSlide(n) {
+            showSlide(n);
+        }
+
+        function copiarAlias() {
+            navigator.clipboard.writeText("lugares.album");
+            const feedback = document.getElementById("copy-feedback");
+            feedback.textContent = "¡Alias copiado!";
+            setTimeout(() => {
+                feedback.textContent = "Copiar alias";
+            }, 2500);
+        }
+    </script>
+</body>
+</html>
