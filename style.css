@@ -466,60 +466,60 @@ body.is-focused .paper-page {
     color: #1f1d1b;
 }
 
-/* EDICIÓN FÍSICA: Parte superior en 2 columnas */
-.physical-top-grid {
+/* EDICIÓN FÍSICA: Parte superior en 2 columnas limpias */
+.edicion-split {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+    grid-template-columns: 330px minmax(0, 1fr);
     gap: 36px;
     align-items: start;
 }
 
-/* Imagen sola, proporción natural sin estirar ni comprimir, sombra sutil */
-.photo-drift {
+.edicion-foto-box {
     position: relative;
     width: 100%;
+    max-width: 330px;
 }
 
-.drift-photo {
+.edicion-foto {
     display: none;
     width: 100%;
+    max-width: 100%;
     height: auto;
-    object-fit: contain;
-    box-shadow: 0 12px 26px rgba(31, 29, 27, 0.14);
+    box-shadow: 0 10px 24px rgba(31, 29, 27, 0.14);
 }
 
-.drift-photo.active {
+.edicion-foto.activa {
     display: block;
 }
 
-.drift-tiny-arrow {
+.edicion-flechita {
     position: absolute;
     right: 8px;
     bottom: 8px;
-    width: 22px;
-    height: 22px;
+    width: 20px;
+    height: 20px;
     border: none;
     border-radius: 50%;
     background: rgba(250, 248, 242, 0.78);
     color: #1f1d1b;
     font-family: 'Inter', sans-serif;
-    font-size: 13px;
+    font-size: 12px;
     line-height: 1;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    opacity: 0.72;
+    opacity: 0.7;
     transition: opacity 0.2s ease, background-color 0.2s ease;
 }
 
-.photo-drift:hover .drift-tiny-arrow,
-.drift-tiny-arrow:hover {
+.edicion-foto-box:hover .edicion-flechita,
+.edicion-flechita:hover {
     opacity: 1;
     background: rgba(250, 248, 242, 0.96);
 }
 
-.physical-description p {
+.edicion-texto-box p {
     font-family: 'Archivo', sans-serif;
     font-size: 16px;
     line-height: 1.85;
@@ -528,7 +528,7 @@ body.is-focused .paper-page {
     margin-bottom: 20px;
 }
 
-.physical-description p:last-child {
+.edicion-texto-box p:last-child {
     margin-bottom: 0;
 }
 
@@ -758,9 +758,13 @@ body.is-focused .paper-page {
         grid-template-columns: 1fr;
     }
 
-    .physical-top-grid {
+    .edicion-split {
         grid-template-columns: 1fr;
         gap: 24px;
+    }
+
+    .edicion-foto-box {
+        max-width: 100%;
     }
 
     .store-title-row {
