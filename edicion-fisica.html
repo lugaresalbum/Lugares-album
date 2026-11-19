@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./style.css?v=10.0">
+    <link rel="stylesheet" href="./style.css?v=11.0">
 </head>
 <body class="is-focused">
 
@@ -23,15 +23,15 @@
             <h1 class="manifesto-title-v2">Edición Física</h1>
         </section>
 
-        <!-- Parte superior: Imagen suelta a la izquierda + Texto a la derecha -->
-        <section class="physical-top-grid">
-            <div class="photo-drift" id="physicalDrift" aria-label="Imágenes de la edición física">
-                <img src="./Fisico.jpeg" alt="Edición física de Lugares" class="drift-photo active">
-                <img src="./Fisico2.jpeg" alt="Detalle de la edición física de Lugares" class="drift-photo">
-                <button type="button" class="drift-tiny-arrow" onclick="nextDriftPhoto()" aria-label="Siguiente imagen">›</button>
+        <!-- Parte superior: Imagen a la izquierda + Texto a la derecha -->
+        <section class="edicion-split">
+            <div class="edicion-foto-box" id="edicionFotoBox">
+                <img src="./Fisico.jpeg" alt="Edición física de Lugares" class="edicion-foto activa">
+                <img src="./Fisico2.jpeg" alt="Detalle de la edición física de Lugares" class="edicion-foto">
+                <button type="button" class="edicion-flechita" onclick="cambiarFotoManual()" aria-label="Cambiar imagen">›</button>
             </div>
 
-            <div class="physical-description">
+            <div class="edicion-texto-box">
                 <p>El "Album", creado por Maxi Rossini y Dani Bouix, es la edición física de Lugares. Concebido como un objeto desplegable, reúne ocho elementos gráficos que dialogan con cada una de las canciones del disco.</p>
                 <p>Pensado como una parte constitutiva de la obra, el dispositivo completa el sentido y el universo conceptual de Lugares.</p>
             </div>
@@ -43,7 +43,7 @@
         <section class="store-acquisition-block">
             <div class="store-title-row">
                 <h2 class="store-heading">Adquirir Ejemplar</h2>
-    
+                <span class="edition-price">$25.000</span>
             </div>
 
             <div class="bank-data-panel">
@@ -113,52 +113,50 @@
     </main>
 
     <script>
-        const driftBox = document.getElementById('physicalDrift');
-        const driftPhotos = document.querySelectorAll('.drift-photo');
-        let driftIndex = 0;
-        let autoTimer = null;
+        const cajaFoto = document.getElementById('edicionFotoBox');
+        const fotos = document.querySelectorAll('.edicion-foto');
+        let idxFoto = 0;
+        let intervaloFoto = null;
 
-        function setDriftPhoto(nextIdx) {
-            if (!driftPhotos.length) return;
-            driftPhotos[driftIndex].classList.remove('active');
-            driftIndex = (nextIdx + driftPhotos.length) % driftPhotos.length;
-            driftPhotos[driftIndex].classList.add('active');
+        function mostrarFoto(n) {
+            if (!fotos.length) return;
+            fotos[idxFoto].classList.remove('activa');
+            idxFoto = (n + fotos.length) % fotos.length;
+            fotos[idxFoto].classList.add('activa');
         }
 
-        function nextDriftPhoto() {
-            setDriftPhoto(driftIndex + 1);
-            resetAutoTimer();
+        function cambiarFotoManual() {
+            mostrarFoto(idxFoto + 1);
+            reiniciarIntervalo();
         }
 
-        function startAutoTimer() {
-            stopAutoTimer();
-            autoTimer = setInterval(() => {
-                setDriftPhoto(driftIndex + 1);
+        function iniciarIntervalo() {
+            detenerIntervalo();
+            intervaloFoto = setInterval(() => {
+                mostrarFoto(idxFoto + 1);
             }, 4500);
         }
 
-        function stopAutoTimer() {
-            if (autoTimer) {
-                clearInterval(autoTimer);
-                autoTimer = null;
+        function detenerIntervalo() {
+            if (intervaloFoto) {
+                clearInterval(intervaloFoto);
+                intervaloFoto = null;
             }
         }
 
-        function resetAutoTimer() {
-            startAutoTimer();
+        function reiniciarIntervalo() {
+            iniciarIntervalo();
         }
 
-        if (driftBox && driftPhotos.length > 1) {
-            driftBox.addEventListener('mouseenter', () => {
-                stopAutoTimer();
-                setDriftPhoto(driftIndex + 1);
+        if (cajaFoto && fotos.length > 1) {
+            cajaFoto.addEventListener('mouseenter', () => {
+                detenerIntervalo();
+                mostrarFoto(idxFoto + 1);
             });
-
-            driftBox.addEventListener('mouseleave', () => {
-                startAutoTimer();
+            cajaFoto.addEventListener('mouseleave', () => {
+                iniciarIntervalo();
             });
-
-            startAutoTimer();
+            iniciarIntervalo();
         }
     </script>
 </body>
